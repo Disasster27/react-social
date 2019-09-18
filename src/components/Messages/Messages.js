@@ -3,6 +3,8 @@ import M from './Messages.module.css';
 import DialogItem from './componentsMessage/DialogItem/Dialog_Item';
 import MessageItem from './componentsMessage/MessageItem/MessageItem';
 import { reduxForm, Field } from 'redux-form';
+import { Textarea } from '../Common/FormsControls/FormsControls';
+import { required, maxLengthCreator } from '../../utils/validators/validators';
 
 function Messages(props) {
 
@@ -45,12 +47,14 @@ function Messages(props) {
     )
 };
 
+const maxLength100 = maxLengthCreator( 100 );
+
 
 const AddMessageForm = ( props ) => {
     return (
         <form onSubmit={ props.handleSubmit }>
             <div>
-                <Field name={ "newMessageText" } placeholder={ "Enter your message" } component={ "textarea" } />
+                <Field name={ "newMessageText" } placeholder={ "Enter your message" } component={ Textarea } validate={ [required, maxLength100 ] } />
             </div>
             <div>
                 <button>Send</button>
