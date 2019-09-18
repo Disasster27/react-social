@@ -15,16 +15,6 @@ class UsersComponent extends React.Component{
     };
 
     onPageChanged = ( pageNumber ) => {
-        // this.props.setCurrentPage( pageNumber );
-        // this.props.setToggleIsFetching( true );
-
-        // // axios.get( `https://social-network.samuraijs.com/api/1.0/users?page=${ pageNumber }&count=${ this.props.pageSize }`, { withCredentials: true } )
-
-
-        // getUsers( pageNumber, this.props.pageSize ).then( data => { 
-        //         this.props.setToggleIsFetching( false );
-        //         this.props.setUsers( data.items ); } );
-
         this.props.getUsers( pageNumber, this.props.pageSize );
 
     }
@@ -58,32 +48,5 @@ let mapStateToProps = ( state ) => {
     }
 };
 
-// let mapDispatchToProps =  ( dispatch ) => {
-//     return {
-//         follow: ( usersId ) => {
-//             dispatch( followAC( usersId ) )
-//         },
-//         unfollow: (usersId) => {
-//             dispatch( unfollowAC( usersId) )
-//         },
-//         setUsers: (users) => {
-//             dispatch( setUsersAC( users ) )
-//         },
-//         setCurrentPage: ( pageNumber ) => {
-//             dispatch( setCurrentPageAC( pageNumber) )
-//         },
-//         setTotalUsersCount: ( totalCount ) => {
-//             dispatch( setTotalUsersCountAC(totalCount) )
-//         },
-//         setToggleIsFetching: ( isFetching ) => {
-//             dispatch( setToggleIsFetchingAC(isFetching) )
-//         },
-//     } 
-// };
-
-// let withRedirect = withAuthRedirect( UsersComponent );
-
-
-export default compose( withAuthRedirect, connect( mapStateToProps, { follow, unfollow, setCurrentPage, getUsers } ) )( UsersComponent );
-
-// withAuthRedirect( connect( mapStateToProps, { follow, unfollow, setCurrentPage, getUsers } )( UsersComponent ) );
+export default compose( /*withAuthRedirect,*/ 
+    connect( mapStateToProps, { follow, unfollow, setCurrentPage, getUsers } ) )( UsersComponent );
