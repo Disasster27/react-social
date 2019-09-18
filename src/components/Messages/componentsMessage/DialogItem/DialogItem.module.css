@@ -1,0 +1,12 @@
+.dialogItem{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.dialogItem img{
+    width: 50px;
+}
+.dialogName{
+    /* display: flex; */
+    align-items: center;
+    margin: auto;
+}

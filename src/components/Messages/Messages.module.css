@@ -1,0 +1,15 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    margin: 10px;
+}
+.dialogsList{
+    border-right: 2px solid rgb(49, 168, 45)
+}
+
+.dialogArea{
+
+}
+.message{
+
+}
