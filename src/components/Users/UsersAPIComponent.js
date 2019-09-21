@@ -11,7 +11,7 @@ class UsersAPIComponent extends React.Component{
                 this.props.setTotalUsersCount ( response.data.totalCount );});
     };
 
-        // getUsers = () => {
+        // requestUsers = () => {
     //     if ( this.props.users.length === 0) {
     //         axios.get("https://social-network.samuraijs.com/api/1.0/users")
     //         .then(response => {this.props.setUsers(response.data.items)});
@@ -48,7 +48,7 @@ class UsersAPIComponent extends React.Component{
             //         <span className={styles.selectedPage}> 4 </span>
             //         <span className={styles.selectedPage}> 5 </span> */}
             //     </div>
-            //     {/* <button onClick={this.getUsers}>getUsers</button> */}
+            //     {/* <button onClick={this.requestUsers}>requestUsers</button> */}
             //     {this.props.users.map( u => <div key={u.id}>
             //         <span>
             //             <div>
