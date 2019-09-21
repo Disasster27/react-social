@@ -1,5 +1,4 @@
 import React from 'react';
-// import M from './../../Messages.module.css';
 import {NavLink} from 'react-router-dom';
 import Avatar from '../../../Profile/components/Info/componentsInfo/Avatar';
 import D from './DialogItem.module.css';

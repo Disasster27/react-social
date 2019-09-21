@@ -10,11 +10,11 @@ import style from '../Common/FormsControls/FormsControls.module.css'
 
 
 
-const LoginForm = ( props ) => {
+const LoginForm = ( {handleSubmit, error } ) => {
 
     return (
         
-        <form onSubmit={ props.handleSubmit } >
+        <form onSubmit={ handleSubmit } >
             <div>
                 <Field placeholder={ "E-mail" } name={ "email" } component={ Input } validate={ [required] }/>
             </div>
@@ -25,8 +25,8 @@ const LoginForm = ( props ) => {
                 <Field type={ "checkbox" } name={ "rememberMe" } component={ Input } />
             </div>
             {
-            props.error && <div className={ style.formError }>
-               { props.error }
+            error && <div className={ style.formError }>
+               { error }
             </div> 
             }
             <div>

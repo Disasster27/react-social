@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, getUsers } from '../State/Users_reducer';
 import Users from './Users';
 import Preloader from '../Common/preloader/Preloader';
-import { withAuthRedirect } from '../../hoc/WithAuthRedirect';
 import{ compose } from 'redux';
 import { getUserSuperSelector,getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingIsProgress } from '../State/users-selectors';
 
@@ -38,16 +37,6 @@ class UsersComponent extends React.Component{
     };
 };
 
-// let mapStateToProps = ( state ) => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingIsProgress: state.usersPage.followingIsProgress
-//     }
-// };
 let mapStateToProps = ( state ) => {
     return {
         users: getUserSuperSelector( state ),
@@ -59,8 +48,7 @@ let mapStateToProps = ( state ) => {
     }
 };
 
-export default compose( /*withAuthRedirect,*/ 
-    connect( mapStateToProps, { follow, unfollow, setCurrentPage, getUsers } ) )( UsersComponent );
+export default compose( connect( mapStateToProps, { follow, unfollow, setCurrentPage, getUsers } ) )( UsersComponent );
 
     
     

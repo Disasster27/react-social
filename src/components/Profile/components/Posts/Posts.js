@@ -7,15 +7,6 @@ import { Textarea } from '../../../Common/FormsControls/FormsControls';
 
 function Post(props) {
 
-    // console.log(props);
-
-    // let newPostElem = React.createRef()
-
-    // let onPostChange = () => {
-    //     let postMessage = newPostElem.current.value;
-    //     props.updateNewPostText(postMessage);
-    // };
-    
     let onAddPost = ( values ) => {
         props.addPost( values.postMessage );
         

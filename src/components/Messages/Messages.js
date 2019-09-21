@@ -8,30 +8,11 @@ import { required, maxLengthCreator } from '../../utils/validators/validators';
 
 function Messages(props) {
 
-    // console.log(props);
-
     let dialogsElements = props.messages.dialogData.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/> );
     let messagesElements = props.messages.messageData.map(message => <MessageItem message={message.message} key={message.id}/>);
-    // let newMessageText = props.messages.newMessageText;
-
-    // let onSendMessageClick = () => {
-    //     props.sendMessage();
-    // };
-    // let onNewMessageChange = (e) => {
-    //     // debugger
-    //     let newText = e.target.value;
-    //     props.updateNewMessage(newText);
-    // };
-
     let addNewMessage = ( value ) => {
         props.sendMessage( value.newMessageText );
     };
-
-    // if ( props.isAuth === false) {
-    //     return ( 
-    //         <Redirect to={ "/login" } />
-    //     )
-    // };
 
     return (
         <div className={M.dialogs}>

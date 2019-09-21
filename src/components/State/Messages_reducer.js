@@ -1,4 +1,3 @@
-// const  UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const  SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
@@ -13,24 +12,15 @@ let initialState = {
         {message: "Hallow",},
         {message: "How are yuo",},
     ],  
-    // newMessageText: "",
 };
 
  const messagesReducer = (state = initialState, action) => {
 
-    // let stateCopy;
-
     switch(action.type) {
-        // case UPDATE_NEW_MESSAGE_TEXT:
-        //     return {
-        //         ...state,
-        //         newMessageText: action.newText,
-        //     };
         case SEND_MESSAGE:
             let text = action.newMessageText;
             return {
                 ...state,
-                // newMessageText: '',
                 messageData: [...state.messageData,{id: 6, message: text}],
             };
         default: 
@@ -39,6 +29,5 @@ let initialState = {
 };
 
 export const sendMessageCreator = ( newMessageText ) => ({type: SEND_MESSAGE, newMessageText});
-// export const updateNewMessageTextCreator = (Message) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: Message,});
 
 export default messagesReducer;

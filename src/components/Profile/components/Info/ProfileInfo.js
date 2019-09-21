@@ -1,17 +1,8 @@
 import React from 'react';
 import I from './Info.module.css';
 import Avatar from './componentsInfo/Avatar';
-import ProfileStatus from './componentsInfo/ProfileStatus';
 
 function ProfileInfo( props ) {
-    // console.log(props);
-
-    // if( !props.profile ) {
-    //     return ( 
-    //         <Preloader />
-    //     )
-    // };
-    
     return (
         <div className={ I.info }>
             <Avatar photos={ props.profile ? props.profile.photos : undefined }/>
