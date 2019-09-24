@@ -1,3 +1,14 @@
-.selectedPage{
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+}
+.selectedPage {
     font-weight: bold;
+}
+.paginationButton {
+    /* display: inline-block; */
+}
+.paginationPortion {
+    margin: 0 15px;
 }

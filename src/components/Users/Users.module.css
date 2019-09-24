@@ -7,3 +7,7 @@
 span:hover{
     cursor: pointer;
 }
+.UserContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

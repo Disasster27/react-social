@@ -1,13 +1,22 @@
 .header{
   grid-area: h;
-  background-color: rgb(231, 241, 78);
+  background-color: #9966cb;
 }
 .logo{
   margin: 5px;
 }
 .loginBlock{
   height: 30px;
-  background-color: rgb(33, 214, 63);
   float: right;
   margin: 15px;
+}
+.btn {
+  border: 2px solid #f1f2f7;
+  border-radius: 32px;
+  background-color: initial;
+  /* color: #666; */
+}
+.btn:hover {
+  cursor: pointer;
+  border-color: #a1a2a7;
 }

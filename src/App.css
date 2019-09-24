@@ -12,9 +12,10 @@
 }
 .main-content{
   grid-area: c;
-  background-color: rgb(233, 115, 115);
+  background-color: #f1f2f7;
+  padding: 15px;
 }
 .siteBar{
   grid-area: n;
-  background-color: rgb(216, 139, 51);
+  background-color: #666;
 }

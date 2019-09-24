@@ -8,7 +8,7 @@
 }
 a{
   text-decoration: none;
-  color: black;
+  color: #fff;
   font-size: 1.5em;
 }
 a:hover{
@@ -17,6 +17,7 @@ a:hover{
 }
 .active{
   font-weight: bold;
+  color: #9168b6;
 }
 
 
