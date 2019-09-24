@@ -5,7 +5,7 @@ const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA';
 
 
 let initialState = {
-    userID: null,
+    userId: null,
     email: null,
     login: null,
     isAuth: false,
@@ -25,7 +25,7 @@ const authReducer = ( state = initialState, action ) => {
     }
 };
 
-export const setAuthUserData = ( userID, email, login, isAuth ) => ({ type: SET_AUTH_USER_DATA, payLoad: { userID, email, login, isAuth } });
+export const setAuthUserData = ( userId, email, login, isAuth ) => ({ type: SET_AUTH_USER_DATA, payLoad: { userId, email, login, isAuth } });
 
 
 export const getAuthUserData = (  ) => async ( dispatch ) => {
@@ -40,7 +40,7 @@ export const login = ( email, password, rememberMe ) => async ( dispatch ) => {
 
     let response = await authAPI.login( email, password, rememberMe )
         if( response.data.resultCode === 0 ) {
-            let { id, login, email, } = response.data.data
+            // let { id, login, email, } = response.data.data
             dispatch( getAuthUserData( ) );
         } else {
             let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";

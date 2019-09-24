@@ -5,7 +5,7 @@ function Avatar( props ) {
        
     return (
         <div className={ A.avatar }>
-            <img src={ props.photos ? props.photos.small : "http://placehold.it/100" } alt="Avatar"></img>
+            <img src={ props.photos && (props.photos.small || "http://placehold.it/100") } alt="Avatar"></img>
          </div>
     )
 };

@@ -14,7 +14,7 @@ function Profile( props ) {
     <div className={ P.profile }>
         <MainImg />
         <div className={ P.profileMain }>
-            <ProfileInfo  profile={ props.profile }/>
+            <ProfileInfo  profile={ props.profile } isOwner={ props.isOwner } savePhoto={ props.savePhoto }/>
             <ProfileStatusWithHooks status={ props.status } updateStatus={ props.updateStatus } />
             <PostContainer store={ props.store } />
         </div>
