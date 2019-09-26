@@ -10,7 +10,7 @@ import style from '../Common/FormsControls/FormsControls.module.css'
 
 
 
-const LoginForm = ( {handleSubmit, error } ) => {
+const LoginForm = ( {handleSubmit, error, captchaUrl } ) => {
 
     return (
         
@@ -24,8 +24,14 @@ const LoginForm = ( {handleSubmit, error } ) => {
             <div>
                 <Field type={ "checkbox" } name={ "rememberMe" } component={ Input } />
             </div>
-            {
-            error && <div className={ style.formError }>
+
+            { captchaUrl && <img alt="Captcha" src={ captchaUrl } /> }
+            { captchaUrl && 
+                <div>
+                    <Field  name={ "captcha" } component={ Input } validate={ [required] }/>
+                </div> }
+
+            {error && <div className={ style.formError }>
                { error }
             </div> 
             }
@@ -43,7 +49,7 @@ const LoginReduxForm = reduxForm({
 
 const Login = ( props ) => {
     const onSubmit = ( formData ) => {
-        props.login( formData.email, formData.password, formData.rememberMe )
+        props.login( formData.email, formData.password, formData.rememberMe, formData.captcha )
     }
 
     if( props.isAuth ) {
@@ -53,12 +59,13 @@ const Login = ( props ) => {
     return (
         <div>
             <h1>LOGIN</h1>
-            <LoginReduxForm onSubmit={ onSubmit } />
+            <LoginReduxForm onSubmit={ onSubmit } captchaUrl={ props.captchaUrl } />
         </div>
     )
 };
 
 const mapStateToProps = ( state ) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth,
 } );
 
